@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="project">
+    <div class="container">
+     <div>
+        <button class="all">all</button>
+        <button class="branding">branding</button>
+        <button class="agency">agency</button>
+        <button class="design">design</button>
+        <button class="photography">photography</button>
+      </div>
+        <ul>
+          <li class="all"><a href="#">All Works</a></li>
+          <li class="branding"><a href="#">Branding</a> </li>
+          <li class="agency"><a href="#">Agency</a></li>
+          <li class="design"><a href="#">Design</a></li>
+          <li class="photography"><a href="#">Photography</a></li>
+        </ul>
+        <button class="all">all</button>
+        <button class="branding">branding</button>
+     
+      <div class="row grid">
+        <div class="col-sm-4 element-item branding design">
+          <img src="./images/p1.png" alt="">
+        </div>
+        <div class="col-sm-4 element-item branding design">
+          <img src="./images/p2.png" alt="">
+        </div>
+        <div class="col-sm-4 element-item angency design ">
+          <img src="./images/p5.png" alt="">
+        </div>
+        <div class="col-sm-4 element-item branding angency photography">
+          <img src="./images/p4.png" alt="">
+        </div>
+        <div class="col-sm-4 element-item branding angency photography">
+          <img src="./images/p3.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script crossorigin="anonymous" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./js/isotope.pkgd.min.js"></script>
+  <script>
+    var $grid = $('.grid')
+    $('.project .all').click(function () {
+      $grid.isotope({ filter: '*' });
+    })
+    $('.branding').click(function () {
+      event.preventDefault()
+      $grid.isotope({ filter: '.branding' });
+    })
+    $('.agency').click(function () {
+      event.preventDefault()
+      $grid.isotope({ filter: '.agency' });
+    })
+    $('.design').click(function () {
+      event.preventDefault()
+      $grid.isotope({ filter: '.design' });
+    })
+    $('.photography').click(function () {
+      event.preventDefault()
+      $grid.isotope({ filter: '.photography' });
+    })
+
+    $('.main-menu>nav>ul>li').hover(function () {
+      $(this).find('.dropdown').slideDown()
+    }, function () {
+      $(this).find('.dropdown').stop().slideUp()
+    })
+  </script>
+</body>
+
+</html>
