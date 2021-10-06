@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>about</title>
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- 新 Bootstrap 核心 CSS 文件 -->
   <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -16,84 +17,156 @@
 
   <!-- //WOW.js演示 -->
   <link rel="stylesheet" href="css/animate.css">
-
+  <link rel="stylesheet" href="./css/font.css">
   <link rel="stylesheet" href="./css/same.css">
   <link rel="stylesheet" href="./css/index.css">
+  <style>
+
+    /* .gallery-thumbs .swiper-slide {
+      opacity: 0.5;
+    }
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    } */
+    .gallery-bottom{
+      --swiper-navigation-color: #666;
+    }
+    .gallery-bottom .top{
+      /* margin-bottom: 20px; */
+      position: relative;
+    }
+    .gallery-bottom .top>img{
+      position: absolute;
+      left:50%;
+      transform: translateX(-50%);
+    }
+    .gallery-bottom p{
+      text-align: center;
+      margin-top: 110px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .gallery-bottom .bottom{
+      margin-top: 30px;
+      display: flex;
+      justify-content:center;
+    }
+    .gallery-bottom .bottom>div{
+      float: left;
+    }
+    .gallery-bottom .bottom>div:first-child{
+      margin-right: 20px;
+    }
+    .gallery-bottom .bottom>div>h5{
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .gallery-bottom .bottom>div>span{
+      font-size: 15px;
+      color: #51515d;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="header-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="logo">
-            <a href="index.html"><img src="./images/Logo-2.png" alt=""></a>
+  <div class="box">
+    <header class="header-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="logo">
+              <a href="index.html"><img src="./images/Logo-2.png" alt=""></a>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="main-menu">
-            <nav>
-              <ul>
-                <li>
-                  <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                  <div class="dropdown">
-                    <ul>
-                      <li><a href="index.html">Home1</a></li>
-                      <li><a href="#">Home2</a></li>
-                      <li><a href="#">Home3</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="portfolio.html">Portfolio</a>
-                  <div class="dropdown">
-                    <ul>
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="#">Portfolio Details</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="#">Pages <i class="fa fa-angle-down"></i></a>
-                  <div class="dropdown">
-                    <ul>
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="team.html">Team</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="blog.html">Blog</a>
-                  <div class="dropdown">
-                    <ul>
-                      <li><a href="blog.html">Blog</a></li>
-                      <li><a href="#">Blog Details</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><a href="contact.html">Contact us</a></li>
-              </ul>
-            </nav>
+          <div class="col-sm-6">
+            <div class="main-menu">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="index.html">Home <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="index.html">Home1</a></li>
+                        <li><a href="#">Home2</a></li>
+                        <li><a href="#">Home3</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="portfolio.html">Portfolio</a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="#">Portfolio Details</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="team.html">Team</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="blog.html">Blog</a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Blog Details</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="contact.html">Contact us</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-2">
-          <div class="sild-bar">
-            <img src="./images/bar-2.png" alt="">
+          <div class="col-sm-2">
+            <div class="sild-bar">
+              <img src="./images/bar-2.png" alt="">
+            </div>
           </div>
         </div>
       </div>
+    </header>
+    <div class="fix">
+      <div class="side">
+        <button class="side-close"><i class="fa fa-times"></i></button>
+        <div class="logo"><a href="index.html"></a><img src="./images/Logo.png" alt=""></div>
+        <h3>Contact Info</h3>
+        <ul class="info">
+          <li><i class="fa fa-map-o"></i><a href="#">12/A, Mirnada City Tower, NYC</a></li>
+          <li><i class="fa fa-clock-o"></i><a href="#">Mon - Fri: 9.00am - 11.00pm</a></li>
+          <li><i class="fa fa-phone"></i><a href="#">+876 864 764 764</a></li>
+          <li><i class="fa fa-envelope-o"></i><a href="#">[Email Protected]</a></li>
+        </ul>
+        <a href="#" class="skill-button"><span>Contact Us</span></a>
+        <ul class="menu">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="mask"></div>
     </div>
-  </header>
-  <div class="banner-2">
-    <div class="container">
-      <h2>About Us</h2>
-      <ul>
-        <li><a href="index.html">Hone - </a></li>
-        <li><a href="portfolio.html">&nbsp;About Us</a></li>
-      </ul>
+    <div class="banner-2">
+      <div class="container">
+        <h2>About Us</h2>
+        <ul>
+          <li><a href="index.html">Hone - </a></li>
+          <li><a href="portfolio.html">&nbsp;About Us</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+  
   <div class="skill">
     <div class="container">
       <div class="row">
@@ -205,7 +278,8 @@
         <div class="col-sm-8">
           <div class="reasons-left">
             <h2 class="wow fadeInUp" data-wow-delay=".3s">Five Reasons You <br> Need Brand.</h2>
-            <p class="wow fadeInUp" data-wow-delay=".6s">Lost the plot mush bog cheeky bugger cheeky absolutely bladdered skive off burke.</p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">Lost the plot mush bog cheeky bugger cheeky absolutely
+              bladdered skive off burke.</p>
           </div>
 
         </div>
@@ -221,7 +295,7 @@
     <div class="container">
       <h2 class="main-title">Our Agency Team of <br>
         Professionals.</h2>
-      <div class="swiper-container">
+      <div class="swiper-container gallery-thumbs ">
         <div class="swiper-wrapper">
           <div class="swiper-slide team-item">
             <div class="single">
@@ -271,10 +345,80 @@
               <h3>Ahsan Riad</h3>
             </div>
           </div>
-          <!-- <div class="swiper-slide" style="background-color: green;">Slide 3</div> -->
+          <div class="swiper-slide team-item">
+            <div class="single">
+              <img src="./images/team1.png" alt="">
+              <div class="hover">
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-text">
+              <span>web Designer</span>
+              <h3>Ahsan Riad</h3>
+            </div>
+          </div>
+          <div class="swiper-slide team-item">
+            <div class="single">
+              <img src="./images/team2.png" alt="">
+              <div class="hover">
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-text">
+              <span>web Designer</span>
+              <h3>Ahsan Riad</h3>
+            </div>
+          </div>
         </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-container gallery-bottom">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="top">
+              <img src="./images/quote.png" alt="">
+            </div>
+            <p>"We are motivated by the satisfaction of our clients. Put your trust in us and <br>
+              share in our growth Asset Management is made up of a team of expert commit- <br>ted
+              and experienced people with a passion for financial markets. Our goal is to <br>
+              achieve continuous. !"
+            </p>
+            <div class="bottom clearfix">
+              <div><img src="./images/test1.png" alt=""></div>
+              <div>
+                <h5>Dianne Ameter</h5>
+                <span>UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="top">
+              <img src="./images/quote.png" alt="">
+            </div>
+            <p>"We are motivated by the satisfaction of our clients. Put your trust in us and <br>
+              share in our growth Asset Management is made up of a team of expert commit- <br>ted
+              and experienced people with a passion for financial markets. Our goal is to <br>
+              achieve continuous. !"
+            </p>
+            <div class="bottom clearfix">
+              <div><img src="./images/test1.png" alt=""></div>
+              <div>
+                <h5>Dianne Ameter</h5>
+                <span>UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </div>
   </div>
@@ -353,29 +497,50 @@
     }, function () {
       $(this).find('.dropdown').stop().slideUp()
     })
+    //side
+    $('.sild-bar').click(function(){
+      $('.side').css('right','0')
+      $('.mask').css('display','block')
+    })
+    $('.side-close').click(function(){
+      $('.side').css('right','-100%')
+      $('.mask').css('display','none')
+    })
+    $('.mask').click(function(){
+      $('.side').css('right','-100%')
+      $('.mask').css('display','none')
+    })
 
 
-    var mySwiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
+
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      // loop:true,
       spaceBetween: 40,
-      // direction: 'vertical', // 垂直切换选项
-      loop: true, // 循环模式选项
-
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,      
+    });
+    var galleryBottom = new Swiper('.gallery-bottom', {
+      // loop:true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
+      controller: {
+        control: galleryThumbs,
+      }
+    });
+
+
+    $('.footer-top .item3 input,.footer-top .item3 textarea').focus(function () {
+      $(this).css('border', '1px solid #fff')
     })
-
-
-
-    $('.footer-top .item3 input,.footer-top .item3 textarea').focus(function(){
-      $(this).css('border','1px solid #fff')
-    })
-    $('.footer-top .item3 input,.footer-top .item3 textarea').blur(function(){
-      $(this).css('border','2px solid #38384b')
+    $('.footer-top .item3 input,.footer-top .item3 textarea').blur(function () {
+      $(this).css('border', '2px solid #38384b')
     })
   </script>
 </body>
+
 </html>

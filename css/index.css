@@ -18,11 +18,31 @@
 }
 .banner .title-1>span{
   color: #ea4c89;
+  font-weight: 800;
 }
 .banner-left p{
   font-size: 20px;
   margin-top: 40px;
   margin-bottom: 45px;
+}
+.banner-left>div>a{
+  float: left;
+}
+.banner-left>div>.play{
+  display: block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ea4c89;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 40px;
+}
+.banner-left>div>.play>i{
+  line-height: 48px;
+  color: #ea4c89;
+}
+.banner-left>div>.play:hover>i{
+  color: #666;
 }
 .banner-right>img{
   display: block;
@@ -333,11 +353,13 @@
 .team .team-item{
   margin-bottom: 25px;
 }
-/* .swiper-container {
+.swiper-container {
   width: 100%;
+}
+.gallery-thumbs{
   padding-bottom: 90px;
   --swiper-theme-color: #ea4c89;
-} */
+}
 .team .team-text{
   padding-top: 15px;
   text-align: center;
@@ -345,6 +367,10 @@
 .team .team-text>span{
   font-size: 14px;
   margin-bottom: 5px;display: block;
+}
+.team .team-text h3{
+  font-size: 18px;
+  color: #000;
 }
 .team .single{
   position: relative;
@@ -415,6 +441,12 @@
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
+.brand .brand-logo>img{
+  transition: all .3s;
+}
+.brand .brand-logo>img:hover{
+  filter: brightness(0%);/* 给图片应用一种线性乘法，使其看起来更亮或更暗。如果值是0%，图像会全黑。值是100%，则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮。如果没有设定值，默认是1 */
+}
 
 
 .share{
@@ -448,7 +480,11 @@
 }
 .share-item .content h3{
   font-size: 20px;
+  transition: all .3s;
 }
-.share-item .content h3>a{
+.share-item .content h3:hover{
+  color: #ea4c89;
+}
+.share-item .content a{
   color: #000;
 }

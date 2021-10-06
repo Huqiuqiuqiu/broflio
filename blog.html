@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog</title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
+  <!-- //WOW.js演示 -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/same.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .blog {
+      padding: 120px 0;
+    }
+
+    .blog .blog-left {
+      margin-right: 50px;
+    }
+    .blog .blog-left .pic{
+      overflow: hidden;
+    }
+    .blog .blog-left img {
+      width: 100%;
+      transition: all .5s;
+    }
+    .blog .blog-left .item-1:hover img{
+      transform: scale(1.1);
+    }
+    .blog .blog-left .content {
+      padding: 30px 50px;
+      background-color: #fff;
+    }
+    .blog .blog-left>.item-1,.blog .blog-left>.item-2{
+      border: 1px solid #f6f6f8;
+      box-shadow: 0px 1px 2px 0px rgba(10, 0, 58, 0.14);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+    
+    .blog-left .user>*{
+      float: left;
+      margin-right: 40px;
+    }
+    .blog-left .user>a>div{
+      float: left;
+    }
+    .blog-left .user>a h6{
+      color: #000;
+      line-height: 35px;
+    }
+    .blog-left .user>a>div:first-child{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    .blog-left .user span{
+      line-height: 34px;
+    }
+    .blog-left .user>a{
+      position: relative;
+      padding-right: 20px;
+    }
+    .blog-left .user>a::after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 5px;height: 5px;
+      color: #ea4c89;
+      border-radius: 50%;
+      right: 10px;
+      /* right: -10px; */
+      top: 50%;
+      z-index: 99;
+    }
+    .blog-left .content h3{
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #000;
+      transition: all .5s;
+    }
+    .blog-left .content h3:hover{
+      color: #ea4c89;
+    }
+    .blog-left .content p{
+      margin-bottom: 35px;
+    }
+    .blog-left .item-2{
+      padding: 50px 40px;
+    }
+    .blog-left .item-2>p{
+      font-size: 20px;
+    }
+    .blog-left .pagination>ul>li{
+      float: left;
+      margin-right: 10px;
+    }
+    .blog-left .pagination>ul>li>a{
+      display: block;
+      width: 46px;
+      height: 46px;
+      background-color: #ea4c89;
+      text-align: center;
+      line-height: 46px;
+      color: #fff;
+      transition: all .5s;
+    }
+    .blog-left .pagination>ul>li>a:hover{
+      background-color: #020233;
+    }
+    .blog-right>div{
+      margin-bottom: 70px;
+    }
+    .blog-right .search{
+      position: relative;
+      margin-bottom: 50px;
+    }
+    .blog-right .search>input{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 55px 0 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background-color: #f7f7f7;
+      color: #1f1841;
+    }
+    .blog-right .search>button{
+      border: none;
+      background-color: transparent;
+      outline: none;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .blog-right>div>h4{
+      font-size: 22px;
+      font-weight: normal;
+      padding-bottom: 10px;
+      position: relative;
+      margin-bottom: 50px;
+    }
+    .blog-right>div>h4::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 60px;
+      background-color: #ea4c89;
+    }
+    .blog-right .news .media-left{
+      padding-right: 20px;
+    }
+    .blog-right .news .content img{
+      width: 100%;
+    }
+    .blog-right .news .content .text h6{
+      font-size: 18px;
+      color: #000;
+      font-weight: normal;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .blog-right .news .content .text span{
+      font-size: 14px;
+    }
+    .blog-right .categories ul>li{
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .blog-right .categories ul>li>a{
+      color: #000; 
+      padding-left: 20px;
+      font-family: Playfair Display;
+    }
+    .blog-right .categories ul>li>a:hover{
+      color: #ea4c89;
+    }
+    .blog-right .categories ul>li>a:hover i{
+      left: 7px;
+    }
+    .blog-right .categories ul>li>a>i{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ea4c89;
+      transition: left .3s;
+    }
+    .blog-right .categories ul>li>a>h6{
+      font-weight: normal;
+      display: block;
+    }
+    .blog-right .comments i{
+      display: block;
+      font-size: 22px;
+      height: 70px;
+      width: 70px;
+      line-height: 66px;
+      text-align: center;
+      color: #ea4c89;
+      border: 2px solid #dbdae0;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    .blog-right .comments i:hover{
+      color: #fff;
+      border: 2px solid #ea4c89;
+      background-color: #ea4c89;
+    }
+    .blog-right .comments .media{
+      padding-bottom: 10px;
+    }
+    .blog-right .comments span{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .blog-right .comments p{
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .blog-right .tags a {
+      color: #000;
+      float: left;
+      display: block;
+      font-family: Playfair Display;
+      font-weight: bold;
+      font-size: 14px;
+      height: 34px;
+      line-height: 30px;
+      text-align: center;
+      padding: 0 19px;
+      border: 2px solid #e8e7ec;
+      border-radius: 6px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      transition: all .5s;
+    }
+    .blog-right .tags a:hover{
+      color: #fff;
+      border: 2px solid #ea4c89;
+      background-color: #ea4c89;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <header class="header-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="logo">
+              <a href="index.html"><img src="./images/Logo-2.png" alt=""></a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="main-menu">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="index.html">Home <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="index.html">Home1</a></li>
+                        <li><a href="#">Home2</a></li>
+                        <li><a href="#">Home3</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="portfolio.html">Portfolio</a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="#">Portfolio Details</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="team.html">Team</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="blog.html">Blog</a>
+                    <div class="dropdown">
+                      <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Blog Details</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="contact.html">Contact us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="sild-bar">
+              <img src="./images/bar-2.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="fix">
+      <div class="side">
+        <button class="side-close"><i class="fa fa-times"></i></button>
+        <div class="logo"><a href="index.html"></a><img src="./images/Logo.png" alt=""></div>
+        <h3>Contact Info</h3>
+        <ul class="info">
+          <li><i class="fa fa-map-o"></i><a href="#">12/A, Mirnada City Tower, NYC</a></li>
+          <li><i class="fa fa-clock-o"></i><a href="#">Mon - Fri: 9.00am - 11.00pm</a></li>
+          <li><i class="fa fa-phone"></i><a href="#">+876 864 764 764</a></li>
+          <li><i class="fa fa-envelope-o"></i><a href="#">[Email Protected]</a></li>
+        </ul>
+        <a href="#" class="skill-button"><span>Contact Us</span></a>
+        <ul class="menu">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="mask"></div>
+    </div>
+    <div class="banner-2">
+      <div class="container">
+        <h2>Our Blog</h2>
+        <ul>
+          <li><a href="index.html">Hone - </a></li>
+          <li><a href="portfolio.html">&nbsp;Our Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="blog-left">
+            <div class="item-1 wow fadeInUp" data-wow-delay='.2s'>
+              <div class="pic">
+                <a href="#"><img src="./images/blog-2.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <div class="user clearfix">
+                  <a href="#">
+                    <div><img src="./images/user-1.jpg" alt=""></div>
+                    <div><h6>Jake Weary</h6></div>
+                  </a>
+                  <span>23 June 2020</span>
+                </div>
+                <a href="#"><h3>Businesses Are Thriving, Societies Are Not. Time for Urgent Change</h3></a>
+                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
+                <a href="#" class="skill-button">
+                  <span>Read More &nbsp;<i class="fa fa-long-arrow-right"></i></span> 
+                </a>
+              </div>
+            </div>
+            <div class="item-1 wow fadeInUp" data-wow-delay='.2s'>
+              <div class="pic">
+                <a href="#"><img src="./images/blog-3.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <div class="user clearfix">
+                  <a href="#">
+                    <div><img src="./images/user-2.jpg" alt=""></div>
+                    <div><h6>Jake Weary</h6></div>
+                  </a>
+                  <span>23 June 2020</span>
+                </div>
+                <a href="#"><h3>Businesses Are Thriving, Societies Are Not. Time for Urgent Change</h3></a>
+                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
+                <a href="#" class="skill-button">
+                  <span>Read More &nbsp;<i class="fa fa-long-arrow-right"></i></span> 
+                </a>
+              </div>
+            </div>
+            <div class="item-2 wow fadeInUp" data-wow-delay='.2s'>
+              <p>Oxford ruddy off his nut, bum bag is lavatory baking cakes bubble and squeak cheesed off what a plonker.!</p>
+            </div>
+            <div class="item-1 wow fadeInUp" data-wow-delay='.2s'>
+              <div class="pic">
+                <a href="#"><img src="./images/blog-5.jpg" alt=""></a>
+              </div>
+              <div class="content">
+                <div class="user clearfix">
+                  <a href="#">
+                    <div><img src="./images/user-4.jpg" alt=""></div>
+                    <div><h6>Jake Weary</h6></div>
+                  </a>
+                  <span>23 June 2020</span>
+                </div>
+                <a href="#"><h3>Businesses Are Thriving, Societies Are Not. Time for Urgent Change</h3></a>
+                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
+                <a href="#" class="skill-button">
+                  <span>Read More &nbsp;<i class="fa fa-long-arrow-right"></i></span> 
+                </a>
+              </div>
+            </div>
+            <div class="pagination wow fadeInUp" data-wow-delay='.2s'>
+              <ul>
+                <li><a href="#"><i class="fa fa-long-arrow-left"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">…</a></li>
+                <li><a href="#"><i class="fa fa-long-arrow-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="blog-right">
+            <div class="search">
+              <input type="text" placeholder="Search…">
+              <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="news wow fadeInUp" data-wow-delay='.3s'">
+              <h4>Recent News</h4>
+              <div class="media content">
+                <div class="media-left media-middle">
+                  <a href="#"><img src="./images/rc-1.jpg" class="media-object" style="width:60px"></a>
+                </div>
+                <div class="media-body text">
+                  <a href="#"><h6>Best website traffice Booster with great tools.</h6></a>
+                  <span>March 04, 2020</span>
+                </div>
+              </div>
+              <div class="media content">
+                <div class="media-left media-middle">
+                  <a href="#"><img src="./images/rc-2.jpg" class="media-object" style="width:60px"></a>
+                </div>
+                <div class="media-body text">
+                  <a href="#"><h6>Best website traffice Booster with great tools.</h6></a>
+                  <span>March 04, 2020</span>
+                </div>
+              </div>
+              <div class="media content">
+                <div class="media-left media-middle">
+                  <a href="#"><img src="./images/rc-3.jpg" class="media-object" style="width:60px"></a>
+                </div>
+                <div class="media-body text">
+                  <a href="#"><h6>Best website traffice Booster with great tools.</h6></a>
+                  <span>March 04, 2020</span>
+                </div>
+              </div>
+            </div>
+            <div class="categories wow fadeInUp" data-wow-delay='.3s'">
+              <h4>Categories</h4>
+              <ul>
+                <li><a href="#"><i class="fa fa-angle-right"></i>Web Design (6)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>Web Development (14)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>Graphics (12)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>IOS/Android Design (10)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>App & Saas (4)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>Fresh Products (9)</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i>Saas Design (8)</a></li>
+              </ul>
+            </div>
+            <div class="comments wow fadeInUp" data-wow-delay='.3s'">
+              <h4>Recent Comments</h4>
+              <div class="media">
+                <div class="media-left media-middle">
+                  <i class="fa fa-comment-o"></i>
+                </div>
+                <div class="media-body">
+                  <span>Justin Case</span>
+                  <p>My lady mush hanky panky young delinquent.!</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left media-middle">
+                  <i class="fa fa-comment-o"></i>
+                </div>
+                <div class="media-body">
+                  <span>Penny Tool</span>
+                  <p>My lady mush hanky panky young delinquent.!</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left media-middle">
+                  <i class="fa fa-comment-o"></i>
+                </div>
+                <div class="media-body">
+                  <span>Eric Widget</span>
+                  <p>My lady mush hanky panky young delinquent.!</p>
+                </div>
+              </div>
+            </div>
+            <div class="tags wow fadeInUp" data-wow-delay='.3s'">
+              <h4>Popular Tags</h4>
+              <div>       
+                <a href="#">The Saas</a>
+                <a href="#">Pix Saas Blog</a>
+                <a href="#">Landing</a>
+                <a href="#">UI/UX Design</a>
+                <a href="#">Branding</a>
+                <a href="#">Animation</a>
+                <a href="#">Design</a>
+                <a href="#">Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="item1">
+              <div class="talk">
+                <h3>Let’s talk.</h3>
+                <p>You’ll called for yielding <br>
+                  male, abundantly is their.</p>
+              </div>
+              <div class="contact">
+                <h4>Email Address</h4>
+                <p>[email protected]</p>
+              </div>
+              <div class="contact">
+                <h4>Mobile Phone:</h4>
+                <p>+1254787843</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="item2">
+              <h4>Quick Link</h4>
+              <ul>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="about.html">Company</a></li>
+                <li><a href="about.html">Angel Investor</a></li>
+                <li><a href="about.html">Offices</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="item2">
+              <h4>About</h4>
+              <ul>
+                <li><a href="portfolio.html">Project</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">Help</a></li>
+                <li><a href="about.html">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="item3">
+              <input type="text" placeholder="First Name">
+              <input type="text" placeholder="Last Name">
+              <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+              <a href="blog.html" class="skill-button"><span>Send Message</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2021 All Rights Reserved passion by <a>Theme_pure</a></p>
+    </div>
+  </footer>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
+  <script src="./js/swiper-bundle.min.js"> </script>
+  <script src="./js/isotope.pkgd.min.js"></script>
+
+  <script src="http://cdn.dowebok.com/131/js/wow.min.js"></script>
+  <script>
+    new WOW().init();//wow是大写哦
+  </script>
+  <script>
+
+    // header
+    $('.main-menu>nav>ul>li').hover(function () {
+      $(this).find('.dropdown').slideDown()
+    }, function () {
+      $(this).find('.dropdown').stop().slideUp()
+    })
+    //side
+    $('.sild-bar').click(function(){
+      $('.side').css('right','0')
+      $('.mask').css('display','block')
+    })
+    $('.side-close').click(function(){
+      $('.side').css('right','-100%')
+      $('.mask').css('display','none')
+    })
+    $('.mask').click(function(){
+      $('.side').css('right','-100%')
+      $('.mask').css('display','none')
+    })
+
+    $('.footer-top .item3 input,.footer-top .item3 textarea').focus(function () {
+      $(this).css('border', '1px solid #fff')
+    })
+    $('.footer-top .item3 input,.footer-top .item3 textarea').blur(function () {
+      $(this).css('border', '2px solid #38384b')
+    })
+  </script>
+</body>
+
+</html>

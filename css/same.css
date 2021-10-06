@@ -48,14 +48,21 @@ input:focus,select:focus,textarea:focus {
 	box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+}
 
 
 .container{
   width: 1220px;
 }
 /* 顶部样式开始 */
-header{
+header {
   padding-top: 24px;
+ 
+}
+.header-1{
   background-color: #fff5fe;
 }
 .main-menu>nav>ul>li{
@@ -87,7 +94,7 @@ header{
   width: 180px;
   height: 45px;
   line-height: 40px;
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
   z-index: 3;
   overflow: hidden;
@@ -110,8 +117,92 @@ header{
   left: 0;
 }
 .sild-bar{
+  cursor: pointer;
   float: right;
   margin-top: 10px;
+}
+.fix .side{
+  transition: all .5s;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 15px 30px;
+}
+.fix .side button{
+  background: none;
+  border: none;
+  margin-bottom: 20px;
+}
+.fix .side h3{
+  font-size: 27px;
+  font-weight: normal;
+  margin: 20px 0 15px;
+}
+.fix .info{
+  margin-bottom: 30px;
+}
+.fix .info li{
+  margin-bottom: 15px;
+}
+.fix .info li>i{
+  color: #ea4c89;
+  width: 25px;
+}
+.fix .info li>a{
+  color: #647589;
+  font-size: 14px;
+}
+.fix .menu{
+  margin-top: 20px;
+}
+.fix .menu li {
+  float: left;
+  margin-right: 8px;
+}
+.fix .menu li>a{
+  display: block;
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+  background-color: #393f53;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.fix .menu li>a::before{
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0%;
+  background: #EA4C89;
+  z-index: -1;
+  transform: rotate(90deg);
+  transition: all .5s;
+}
+.fix .menu li>a:hover::before{
+  width: 100%;
+}
+.fix .menu li>a>i{
+  width: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+}
+.fix .mask{
+  transition: all .5s;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
 }
 /* 顶部样式结束 */
 /* 其他相同样式 */
@@ -161,6 +252,7 @@ h2{
 .main-title{
   font-size: 48px;
   text-align: center;
+  font-weight: 800;
   margin-bottom: 50px;
 }
 .main-p{
@@ -243,9 +335,20 @@ footer{
 }
 
 
-
-.header-2{
+.box{
+  background: url(../images/abougbg.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-color: #020233;
+  opacity: 0.5;
 }
 .header-2 .main-menu>nav>ul>li>a{
   color: #fff;
@@ -256,9 +359,10 @@ footer{
 .banner-2{
   padding: 250px 0;
   margin-bottom: 20px;
-  background-color: #020233;
+  /* background-color: #020233; */
   text-align: center;
   position: relative;
+  
 }
 .banner-2 h2{
   font-size: 72px;
